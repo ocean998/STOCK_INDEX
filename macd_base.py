@@ -75,6 +75,8 @@ class MACD_INDEX:
             self.begin = begin
         if end != '2019':
             self.end = end
+
+        print('k线级别:', self.jb, '\t新设置的开始时间:', self.begin, '\t结束时间:', self.end)
     def get_MACD(self, data, sema=12, lema=26, m_ema=9):
         '''
             根据股票代码计算macd结果，设置macd属性
@@ -510,7 +512,8 @@ if __name__ == "__main__":
     # macd_60.save_bing_golden('D:\\0_stock_macd\\_日K线金叉.xls', False)
 
     macd_60 = MACD_INDEX('60')
-    macd_60.set_time('2018-07-01','2018-11-01')
+    macd_60.set_time('2018-06-01','2018-12-11')
+
     macd_60.save_bottom('all', False)
 
 
